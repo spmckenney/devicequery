@@ -1,6 +1,6 @@
-FROM nvidia/cuda:7.5-runtime-ubuntu14.04
+FROM nvidia/cuda:8.0-runtime-centos7
 
-RUN apt-get update && apt-get -y --force-yes install cuda-samples-7.5 && apt-get clean
+RUN yum update && yum -y install cuda-samples-8.0 && yum clean
 RUN make -C /usr/local/cuda/samples/1_Utilities/deviceQuery
 RUN ln -s /usr/local/cuda/samples/1_Utilities/deviceQuery/deviceQuery /usr/bin
 
